@@ -53,4 +53,11 @@
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
 
+    <bean id="jsonFilterAdvice" class="com.luobo.ser.ControllerSerializeAdviceFilter">
+        <property name="datePattern" value="yyyy-MM-dd HH:mm:ss" />
+        <property name="jsonSerializerClass"
+          value="com.luobo.ser.AppGsonSerializer" />
+    </bean>
+
+
 </beans>

@@ -64,6 +64,11 @@ public class BaseRepositoryImpl<T, ID extends Serializable> implements BaseRepos
 	}
 
 	@Override
+	public T merge(T entity) {
+		return (T)getCurrentSession().merge(entity);
+	}
+
+	@Override
 	public void update(T entity) throws Exception {
 
 	}

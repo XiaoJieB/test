@@ -28,6 +28,11 @@ public class BaseServiceImpl<T,ID extends Serializable> implements BaseService<T
 	}
 
 	@Override
+	public T merge(T entity) {
+		return (T)getDao().merge(entity);
+	}
+
+	@Override
 	public List<T> findAll() {
 		return getDao().findAll();
 	}

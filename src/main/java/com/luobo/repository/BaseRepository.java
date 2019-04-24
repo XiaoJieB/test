@@ -18,6 +18,8 @@ public interface BaseRepository<T,PK extends Serializable>{
 
 	PK save(T entity);
 
+	T merge(T entity);
+
 	void update(T entity) throws Exception;
 
 	void delete(PK id);

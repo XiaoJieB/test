@@ -80,87 +80,88 @@
     </style>
 </head>
 <body>
-<div id="container">
-    <form action="login.action" method="post" id="loginForm">
-        <div class="login">
-            <h1>大作业评价系统</h1>
-            <div class="textbox">
-                <select id="type">
-                    <option value ="0">学生</option>
-                    <option value ="1">老师</option>
-                </select>
-                <input type="text" name="number" id="number" placeholder="学号/教师号"/><br>
-                <input type="password" name="password" id="password" placeholder="密码"/>
-                <input type="submit" class="signUp" value="提交"/>
-            </div>
-        </div>
-    </form>
-</div>
+<h1>Welcome!</h1>
+<%--<div id="container">--%>
+    <%--<form action="login.action" method="post" id="loginForm">--%>
+        <%--<div class="login">--%>
+            <%--<h1>大作业评价系统</h1>--%>
+            <%--<div class="textbox">--%>
+                <%--<select id="type">--%>
+                    <%--<option value ="0">学生</option>--%>
+                    <%--<option value ="1">老师</option>--%>
+                <%--</select>--%>
+                <%--<input type="text" name="number" id="number" placeholder="学号/教师号"/><br>--%>
+                <%--<input type="password" name="password" id="password" placeholder="密码"/>--%>
+                <%--<input type="submit" class="signUp" value="提交"/>--%>
+            <%--</div>--%>
+        <%--</div>--%>
+    <%--</form>--%>
+<%--</div>--%>
 
-<script type="text/javascript">
-  var form = $("#loginForm");
-  $(function () {
-    $("#type").select2({
-      width: "380px"
-    });
-    form.validate({
-      submitHandler: function () {
-        if ($('#type').val() == "0") {
-          $.ajax({
-            type: "POST",
-            data: {"number": $("#number").val(), "password": $("#password").val()},
-            async: false,
-            url: "/student/login.action",
-            success: function (data) {
-              if (data.code == "0") {
-                window.location.href = "/student/list";
-              } else {
-                swal("警告", data.msg, "error");
-              }
-            }
-          });
-        } else {
-          $.ajax({
-            type: "POST",
-            data: {"number": $("#number").val(), "password": $("#password").val()},
-            async: false,
-            url: "/teacher/login.action",
-            success: function (data) {
-              if (data.code == "0") {
-                window.location.href = "/teacher/list";
-              } else {
-                swal("警告", data.msg, "error");
-              }
-            }
-          });
-        }
-        return false;
-      },
-      rules: {
-        number: {
-          required: true,
-          minlength: 3,
-          maxlength: 3
-        },
-        password: {
-          required: true,
-        }
-      },
-      messages: {
-        number: {
-          required: "学号/教师号不能为空",
-          minlength: "请输入正确的学号/教师号",
-          maxlength: "请输入正确的学号/教师号",
-        },
-        password: {
-          required: "必填",
-          // isMobile : "请正确填写手机号码"
-        }
-      }
-    });
+<%--<script type="text/javascript">--%>
+  <%--var form = $("#loginForm");--%>
+  <%--$(function () {--%>
+    <%--$("#type").select2({--%>
+      <%--width: "380px"--%>
+    <%--});--%>
+    <%--form.validate({--%>
+      <%--submitHandler: function () {--%>
+        <%--if ($('#type').val() == "0") {--%>
+          <%--$.ajax({--%>
+            <%--type: "POST",--%>
+            <%--data: {"number": $("#number").val(), "password": $("#password").val()},--%>
+            <%--async: false,--%>
+            <%--url: "/student/login.action",--%>
+            <%--success: function (data) {--%>
+              <%--if (data.code == "0") {--%>
+                <%--window.location.href = "/student/list";--%>
+              <%--} else {--%>
+                <%--swal("警告", data.msg, "error");--%>
+              <%--}--%>
+            <%--}--%>
+          <%--});--%>
+        <%--} else {--%>
+          <%--$.ajax({--%>
+            <%--type: "POST",--%>
+            <%--data: {"number": $("#number").val(), "password": $("#password").val()},--%>
+            <%--async: false,--%>
+            <%--url: "/teacher/login.action",--%>
+            <%--success: function (data) {--%>
+              <%--if (data.code == "0") {--%>
+                <%--window.location.href = "/teacher/list";--%>
+              <%--} else {--%>
+                <%--swal("警告", data.msg, "error");--%>
+              <%--}--%>
+            <%--}--%>
+          <%--});--%>
+        <%--}--%>
+        <%--return false;--%>
+      <%--},--%>
+      <%--rules: {--%>
+        <%--number: {--%>
+          <%--required: true,--%>
+          <%--minlength: 3,--%>
+          <%--maxlength: 3--%>
+        <%--},--%>
+        <%--password: {--%>
+          <%--required: true,--%>
+        <%--}--%>
+      <%--},--%>
+      <%--messages: {--%>
+        <%--number: {--%>
+          <%--required: "学号/教师号不能为空",--%>
+          <%--minlength: "请输入正确的学号/教师号",--%>
+          <%--maxlength: "请输入正确的学号/教师号",--%>
+        <%--},--%>
+        <%--password: {--%>
+          <%--required: "必填",--%>
+          <%--// isMobile : "请正确填写手机号码"--%>
+        <%--}--%>
+      <%--}--%>
+    <%--});--%>
 
-  })
+  <%--})--%>
 
-</script>
+<%--</script>--%>
 </body>
 </html>

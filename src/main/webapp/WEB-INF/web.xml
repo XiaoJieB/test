@@ -3,11 +3,6 @@
   xmlns="http://java.sun.com/xml/ns/javaee"
   xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
   version="3.0">
-  <!-- 地址为http://localhost:8080/  显示的默认网页-->
-  <welcome-file-list>
-    <welcome-file>/index.jsp</welcome-file>
-  </welcome-file-list>
-
   <!--加载Spring的配置文件到上下文中去-->
   <context-param>
     <param-name>contextConfigLocation</param-name>
@@ -40,7 +35,10 @@
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
-
+  <filter>
+    <filter-name>cors</filter-name>
+    <filter-class>com.luobo.ser.CORSFilter</filter-class>
+  </filter>
   <!--  字符集过滤  -->
   <filter>
     <filter-name>encodingFilter</filter-name>
@@ -56,6 +54,10 @@
   </filter>
   <filter-mapping>
     <filter-name>encodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>cors</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
   <welcome-file-list>

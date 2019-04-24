@@ -12,6 +12,8 @@ public interface BaseService<T,ID extends Serializable> {
 
 	T get(ID id);
 
+	T merge(T entity);
+
 	List<T> findAll();
 
 	void persist(T entity);

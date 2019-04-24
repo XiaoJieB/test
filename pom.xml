@@ -25,6 +25,20 @@
   </properties>
 
   <dependencies>
+
+    <!--<dependency>-->
+      <!--<groupId>pers.ksy</groupId>-->
+      <!--<artifactId>common-util</artifactId>-->
+      <!--<version>1.5.0-REALEASE</version>-->
+    <!--</dependency>-->
+
+    <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.8.1</version>
+    </dependency>
+
     <!-- 单元测试 -->
     <dependency>
       <groupId>junit</groupId>
@@ -41,8 +55,37 @@
     </dependency>
 
     <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-core</artifactId>
+    <version>${springVersion}</version>
+  </dependency>
+    <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-aop</artifactId>
+    <version>${springVersion}</version>
+  </dependency>
+  <!-- aop aspect注解导包-->
+  <dependency>
+    <groupId>org.aspectj</groupId>
+    <artifactId>aspectjrt</artifactId>
+    <version>1.8.6</version>
+  </dependency>
+  <dependency>
+    <groupId>org.aspectj</groupId>
+    <artifactId>aspectjweaver</artifactId>
+    <version>1.8.9</version>
+  </dependency>
+    <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.8.5</version>
+    </dependency>
+
+
+    <dependency>
       <groupId>org.springframework</groupId>
-      <artifactId>spring-core</artifactId>
+      <artifactId>spring-aspects</artifactId>
       <version>${springVersion}</version>
     </dependency>
 
@@ -179,8 +222,8 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
-          <source>6</source>
-          <target>6</target>
+          <source>8</source>
+          <target>8</target>
         </configuration>
       </plugin>
     </plugins>
